@@ -1,7 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom"
 import Navbar from "./components/Navbar"
 import PrivateRoutes from "./utils/PrivateRoutes"
 import AuthProfile, { useAuth } from "./utils/AuthProfile"
+import { useEffect } from "react";
 
 function App() {
   return (
@@ -23,10 +24,12 @@ function App() {
 }
 
 function Login() {
-  const { loginUser } = useAuth();
+  const navigate = useNavigate();
+  const { user, loginUser } = useAuth();
+
   return (
     <>
-      <h1>Login</h1>
+      < h1 > Login</h1 >
       <button onClick={() => loginUser()}>Login</button>
     </>
   )

@@ -54,7 +54,7 @@ function AuthProfile({ children }: AuthProfileProps) {
 
   return (
     <AuthContext.Provider value={value}>
-      {children}
+      {loading ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> : children}
     </AuthContext.Provider>
   )
 }

@@ -18,10 +18,10 @@ export default function Navbar() {
                 <Link to={'/'}>Home</Link>
             </div>
             <div style={{ display: 'flex', gap: 20, marginRight: 20 }}>
+                <Link to={'/profile'}>Profile</Link>
                 {user ?
                     <>
                         <Link to={'/setting'}>Settings</Link>
-                        <Link to={'/profile'}>Profile</Link>
                         <button onClick={() => logoutUser()}>Logout</button>
                     </> :
                     <>
